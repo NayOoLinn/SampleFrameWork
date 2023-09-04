@@ -4,7 +4,6 @@ Pod::Spec.new do |s|
   s.summary          = 'A short description of SampleFrameWork.'
   s.description      = 'Sample Framework'
   
-  s.plattform        = :ios, "12.0"
   s.homepage         = 'https://github.com/NayOoLinn/'
   s.license          = 'MIT'
   s.author           = { 'Nay Oo Linn' => 'alone.nol@gmail.com' }
