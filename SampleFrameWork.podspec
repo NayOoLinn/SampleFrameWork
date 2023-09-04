@@ -3,13 +3,15 @@ Pod::Spec.new do |s|
   s.version          = '1.0.0'
   s.summary          = 'A short description of SampleFrameWork.'
   s.description      = 'Sample Framework'
+  
+  s.plattform        = :ios, "12.0"
   s.homepage         = 'https://github.com/NayOoLinn/'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'someone@siriustech.io' => 'someone@siriustech.io' }
-  s.source           = { :git => 'git@github.com:NayOoLinn/SampleFrameWork.git'}
-  s.ios.deployment_target = '12.0'
+  s.license          = 'MIT'
+  s.author           = { 'Nay Oo Linn' => 'alone.nol@gmail.com' }
+  s.source           = { :git => 'git@github.com:NayOoLinn/SampleFrameWork.git' }
+    
+  s.source_files     = 'SampleFrameWork'
   s.swift_version    = '5.0'
-  s.source_files     = '*'
   
   s.dependency 'Core'
 end
