@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios
   spec.ios.deployment_target = "12.0"
   
-  spec.source        = { :git => 'git@github.com:NayOoLinn/SampleFrameWork.git' }
+  spec.source        = { :http => 'https://github.com/NayOoLinn/SampleFrameWork/blob/main/SampleFrameWork-v1.0.0.zip' }
   spec.source_files  = "SampleFrameWork"
   spec.exclude_files = "Classes/Exclude"
   spec.swift_version = "5"
@@ -41,4 +41,6 @@ Pod::Spec.new do |spec|
   
   spec.dependency "Core", :git => 'http://10.0.0.10/SuperApp/iOS/core.git'
 
+  spec.vendored_frameworks = 'SampleFrameWork.xcframework'
+  
 end
