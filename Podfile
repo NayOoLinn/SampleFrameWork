@@ -6,5 +6,7 @@ target 'SampleFrameWork' do
   use_frameworks!
 
   # Pods for SampleFrameWork
-  pod 'Core', :git => 'http://10.0.0.10/SuperApp/iOS/core.git', :tag => '1.0.1'
+#  pod 'Core', :git => 'http://10.0.0.10/SuperApp/iOS/core.git', :tag => '1.0.1'
+  pod 'RxSwift' , '6.5.0'
+  pod 'RxCocoa' , '6.5.0'
 end
