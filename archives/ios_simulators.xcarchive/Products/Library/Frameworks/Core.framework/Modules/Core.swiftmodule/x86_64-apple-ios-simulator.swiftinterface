@@ -1,0 +1,109 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name Core
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+@_exported import Core
+import Foundation
+import RxCocoa
+import RxSwift
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+public class ActivityIndicator : RxCocoa.SharedSequenceConvertibleType {
+  public typealias Element = Swift.Bool
+  public typealias SharingStrategy = RxCocoa.DriverSharingStrategy
+  public init()
+  public func asSharedSequence() -> RxCocoa.SharedSequence<Core.ActivityIndicator.SharingStrategy, Core.ActivityIndicator.Element>
+  @objc deinit
+}
+extension RxSwift.ObservableConvertibleType {
+  public func trackActivity(_ activityIndicator: Core.ActivityIndicator) -> RxSwift.Observable<Self.Element>
+  public func track(_ activity: Core.ActivityIndicator, error: Core.ErrorTracker) -> RxSwift.Observable<Self.Element>
+}
+extension RxSwift.PrimitiveSequenceType where Self.Trait == RxSwift.SingleTrait {
+  public func trackActivity(_ activityIndicator: Core.ActivityIndicator) -> RxSwift.Single<Self.Element>
+}
+public protocol AppTabbarProtocol : AnyObject {
+  func showTabBar()
+  func hideTabBar()
+  func isTabBarShowing() -> Swift.Bool
+}
+public protocol View : AnyObject {
+  associatedtype ViewModel : Core.AnyViewModel
+  var viewModel: Self.ViewModel! { get set }
+  func setupUI()
+  func bind(viewModel: Self.ViewModel)
+  func bindInputs()
+  func bindOutputs()
+  func bindStatelessOutputs()
+}
+extension Core.View {
+  public func bind(viewModel: Self.ViewModel)
+  public func bindInputs()
+  public func bindOutputs()
+  public func bindStatelessOutputs()
+}
+public protocol AnyViewModel {
+}
+public protocol StatelessViewModel : Core.AnyViewModel {
+  associatedtype StatelessInput
+  associatedtype StatelessOutput
+  func transform(input: Self.StatelessInput) -> Self.StatelessOutput
+}
+public protocol StatefulViewModel : Core.AnyViewModel {
+  associatedtype StatefulInput
+  associatedtype StatefulOutput
+  associatedtype InternalState
+  var input: Self.StatefulInput { get }
+  var output: Self.StatefulOutput { get }
+  var internalState: Self.InternalState { get }
+  func bindLogics()
+}
+extension Core.StatefulViewModel {
+  public func binLogics()
+}
+public protocol ControllerType {
+  associatedtype ViewModelType
+  func configViewModel(viewModel: Self.ViewModelType)
+  func setupViews()
+  func bindViewModel()
+}
+public protocol RegisDelegate {
+  static var identifier: Swift.String { get }
+  static func regis(identifier: Swift.String)
+  static func getIdentifier() -> Swift.String
+}
+open class SCoordinator {
+  public var navigationController: UIKit.UINavigationController
+  open var delegate: Core.RegisDelegate?
+  required public init(navigationController: UIKit.UINavigationController)
+  open func start()
+  open func pushTo(viewController: UIKit.UIViewController)
+  open func changeLastViewController(to toViewController: UIKit.UIViewController)
+  open func cleanViewControllers(to toViewController: UIKit.UIViewController)
+  open func cleanStackWhenPush(to toViewController: UIKit.UIViewController)
+  open func isVisible(controllerName: Swift.String) -> Swift.Bool
+  open func popTo(viewController type: UIKit.UIViewController.Type)
+  @objc deinit
+}
+final public class ErrorTracker : RxCocoa.SharedSequenceConvertibleType {
+  public typealias SharingStrategy = RxCocoa.DriverSharingStrategy
+  public init()
+  final public func asSharedSequence() -> RxCocoa.SharedSequence<Core.ErrorTracker.SharingStrategy, Swift.Error>
+  final public func asObservable() -> RxSwift.Observable<Swift.Error>
+  @objc deinit
+  public typealias Element = Swift.Error
+}
+extension RxSwift.ObservableConvertibleType {
+  public func trackError(_ errorTracker: Core.ErrorTracker) -> RxSwift.Observable<Self.Element>
+}
+public protocol OrientationProtocol : AnyObject {
+  var screenOrientationMask: UIKit.UIInterfaceOrientationMask { get }
+}
+public protocol ViewModelType {
+  associatedtype Input
+  associatedtype Output
+  var input: Self.Input { get }
+  var output: Self.Output { get }
+}

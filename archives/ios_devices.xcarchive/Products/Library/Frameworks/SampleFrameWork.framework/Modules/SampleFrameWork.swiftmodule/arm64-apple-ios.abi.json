@@ -1,0 +1,87 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SampleFrameWork",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Test",
+        "printedName": "Test",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Test",
+                "printedName": "SampleFrameWork.Test",
+                "usr": "s:15SampleFrameWork4TestC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15SampleFrameWork4TestC6sharedACvpZ",
+            "mangledName": "$s15SampleFrameWork4TestC6sharedACvpZ",
+            "moduleName": "SampleFrameWork",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Test",
+                    "printedName": "SampleFrameWork.Test",
+                    "usr": "s:15SampleFrameWork4TestC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15SampleFrameWork4TestC6sharedACvgZ",
+                "mangledName": "$s15SampleFrameWork4TestC6sharedACvgZ",
+                "moduleName": "SampleFrameWork",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:15SampleFrameWork4TestC",
+        "mangledName": "$s15SampleFrameWork4TestC",
+        "moduleName": "SampleFrameWork",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": []
+}
