@@ -39,7 +39,8 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   
-  spec.dependency "Core", :git => 'http://10.0.0.10/SuperApp/iOS/core.git'
+  spec.dependency 'RxSwift', '6.5.0'
+  spec.dependency 'RxCocoa', '6.5.0'
 
   spec.vendored_frameworks = 'SampleFrameWork.xcframework'
   
